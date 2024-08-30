@@ -5,14 +5,14 @@ pipeline{
     maven 'Maven3'
   }
   stages{
-    stage("cleanup workspace"){
+    stage("Cleanup Workspace"){
       steps{
-        cleanws()
+        CleanWs()
       }
     }
-    stage("Checkout from scm"){
+     stage("Checkout from SCM"){
       steps{
-        git branch:'master', credentialsId:'github', url:'https://github.com/Harish5735/Project_demo'
+          git branch:'master', credentialsId:'github', url: 'https://github.com/Harish5735/Project_demo'
       }
     }
     stage("Build Application"){
@@ -24,6 +24,9 @@ pipeline{
       steps{
         sh "mvn test"
       }
-    }
+    } 
   }
 }
+ 
+  
+
